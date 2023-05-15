@@ -9,9 +9,8 @@
 - 👨‍🏫 Lanfranco Lisandro - Docente en Programación
 
 ### Colaboradores:
-- :heavy_check_mark: Pierola Alan - Estudiante de Tec. Sup. en Telecomunicaciones 
 - :heavy_check_mark: Ale Ulises - Estudiante de Tec. Sup. en Telecomunicaciones 
-- :heavy_check_mark: Saint Girons Candelaria  - Estudiante de Tec. Sup. en Telecomunicaciones 
+
 ---
 ### Año 2023
 
