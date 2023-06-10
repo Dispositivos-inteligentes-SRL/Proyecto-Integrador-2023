@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../Electronica Microcontrolada/Proyecto 3/proyecto-3-grupo-01"
+		},
+		{
+			"name": "Ej2P3ESP32",
+			"path": "../../Electronica Microcontrolada/Proyecto 3/Ej2P3ESP32"
+		}
+	],
+	"settings": {
+		"githubPullRequests.ignoredPullRequestBranches": [
+			"main"
+		]
+	}
+}
