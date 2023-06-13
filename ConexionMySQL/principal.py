@@ -6,7 +6,7 @@ conexion_bd = conexion.Conexion(host="localhost", user="root", password="Paemig.
 # Conectar a la base de datos
 conexion_bd.connect()
 
-# Leer los propietarios desde la tabla
+# Leer los propietarios desde la tablapython
 propietarios = conexion_bd.leer_propietarios()
 for propietario in propietarios:
     print(propietario)
