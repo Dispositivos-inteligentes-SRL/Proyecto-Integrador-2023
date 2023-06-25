@@ -70,7 +70,7 @@ def select_propietarios():
 create_table_propietarios()
 
 # Llamar al método de inserción de datos
-insert_propietario("Ulises", "Ale", "Hernandez 379", "3585480953", "ulisesaale@gmail.com")
+insert_propietario("Guillermina", "Milet", "Hernandez 379", "3584303418", "guillerminamilet@gmail.com")
 
 # Llamar al método de selección de datos
 select_propietarios()
