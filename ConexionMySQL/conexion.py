@@ -34,11 +34,11 @@ class Conexion:
         else:
             print("No hay conexión a la base de datos")
 
-    def ingresar_propietario(self, id_propietario, nombre, apellido, fecha_nacimiento):
+    def ingresar_propietario(self, id_propietario, nombre, apellido, direccion, telefono, mail):
         if self.connection.is_connected():
             cursor = self.connection.cursor()
-            query = "INSERT INTO propietario (id_propietario, Nombre, Apellido, FechaNacimiento) VALUES (%s, %s, %s, %s)"
-            values = (id_propietario, nombre, apellido, fecha_nacimiento)
+            query = "INSERT INTO propietario (id_propietario, Nombre, Apellido, Direccion, Telefono, Mail) VALUES (%s, %s, %s, %s, %s, %s)"
+            values = (id_propietario, nombre, apellido, direccion, telefono, mail)
             cursor.execute(query, values)
             self.connection.commit()
             cursor.close()
