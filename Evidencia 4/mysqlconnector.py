@@ -14,12 +14,11 @@ def create_table_propietarios():
     # Sentencia SQL para crear la tabla propietarios
     create_table_query = """
     CREATE TABLE IF NOT EXISTS propietarios (
-        idpropietarios INT AUTO_INCREMENT PRIMARY KEY,
-        Nombre VARCHAR(50),
-        Apellido VARCHAR(50),
-        Direccion VARCHAR(100),
-        Telefono VARCHAR(20),
-        Mail VARCHAR(50)
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        Producto VARCHAR(50),
+        Marca VARCHAR(50),
+        Modelo VARCHAR(100),
+        Codigo VARCHAR(20)
     )
     """
 
@@ -32,12 +31,12 @@ def create_table_propietarios():
     cursor.close()
 
 # Método de inserción de datos en la tabla propietarios
-def insert_propietario(nombre, apellido, direccion, telefono, mail):
+def insert_propietario(producto, marca, modelo, codigo):
     cursor = connection.cursor()
 
     # Sentencia SQL para insertar un nuevo propietario en la tabla propietarios
-    insert_query = "INSERT INTO propietarios (Nombre, Apellido, Direccion, Telefono, Mail) VALUES (%s, %s, %s, %s, %s)"
-    values = (nombre, apellido, direccion, telefono, mail)
+    insert_query = "INSERT INTO propietarios (producto, marca, modelo, codigo) VALUES (%s, %s, %s, %s)"
+    values = (producto, marca, modelo, codigo)
 
     # Ejecutar la sentencia SQL de inserción
     cursor.execute(insert_query, values)
@@ -70,7 +69,7 @@ def select_propietarios():
 create_table_propietarios()
 
 # Llamar al método de inserción de datos
-insert_propietario("Guillermina", "Milet", "Hernandez 379", "3584303418", "guillerminamilet@gmail.com")
+insert_propietario("ESP32", "Espressif", "Wroom", "ESP32")
 
 # Llamar al método de selección de datos
 select_propietarios()
