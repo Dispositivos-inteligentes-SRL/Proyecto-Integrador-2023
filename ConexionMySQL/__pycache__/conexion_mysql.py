@@ -8,3 +8,8 @@ midb = mysql.connector.connect(
 )
 print(midb)
 
+cursor = conexion.cursor()
+
+cursor.execute("SHOW DATABASES")
+for bd in cursor:  # type: ignore
+    print(bd)
