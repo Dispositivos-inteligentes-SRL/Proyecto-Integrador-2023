@@ -1,0 +1,1 @@
+SELECT * FROM proyectointegradorv01.propietarios;
