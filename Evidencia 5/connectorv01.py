@@ -15,12 +15,11 @@ def create_table_propietarios():
     # Sentencia SQL para crear la tabla propietarios
     create_table_query = """
     CREATE TABLE IF NOT EXISTS propietarios (
-        idpropietarios INT AUTO_INCREMENT PRIMARY KEY,
-        Nombre VARCHAR(50),
-        Apellido VARCHAR(50),
-        Direccion VARCHAR(100),
-        Telefono VARCHAR(20),
-        Mail VARCHAR(50)
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        Producto VARCHAR(50),
+        Marca VARCHAR(50),
+        Modelo VARCHAR(100),
+        Codigo VARCHAR(20)
     )
     """
 
@@ -33,12 +32,12 @@ def create_table_propietarios():
     cursor.close()
 
 # Método de inserción de datos en la tabla propietarios
-def insert_propietario(nombre, apellido, direccion, telefono, mail):
+def insert_propietario(producto, marca, modelo, codigo):
     cursor = connection.cursor()
 
     # Sentencia SQL para insertar un nuevo propietario en la tabla propietarios
-    insert_query = "INSERT INTO propietarios (Nombre, Apellido, Direccion, Telefono, Mail) VALUES (%s, %s, %s, %s, %s)"
-    values = (nombre, apellido, direccion, telefono, mail)
+    insert_query = "INSERT INTO propietarios (producto, marca, modelo, codigo) VALUES (%s, %s, %s, %s)"
+    values = (producto, marca, modelo, codigo)
 
     # Ejecutar la sentencia SQL de inserción
     cursor.execute(insert_query, values)
@@ -68,12 +67,12 @@ def select_propietarios():
     cursor.close()
 
 # Método de actualización de datos en la tabla propietarios
-def update_propietario(prop_id, nombre, apellido, direccion, telefono, mail):
+def update_propietario(prop_id, producto, marca, modelo, codigo):
     cursor = connection.cursor()
 
     # Sentencia SQL para actualizar un propietario en la tabla propietarios
-    update_query = "UPDATE propietarios SET Nombre=%s, Apellido=%s, Direccion=%s, Telefono=%s, Mail=%s WHERE idpropietarios=%s"
-    values = (nombre, apellido, direccion, telefono, mail, prop_id)
+    update_query = "UPDATE propietarios SET Producto=%s, Marca=%s, Modelo=%s, Codigo=%s WHERE idpropietarios=%s"
+    values = (producto, marca, modelo, codigo, prop_id)
 
     # Ejecutar la sentencia SQL de actualización
     cursor.execute(update_query, values)
@@ -115,12 +114,11 @@ def ejecutar_menu():
         opcion = mostrar_menu()
         
         if opcion == "1":
-            nombre = input("Ingrese el nombre del propietario: ")
-            apellido = input("Ingrese el apellido del propietario: ")
-            direccion = input("Ingrese la dirección del propietario: ")
-            telefono = input("Ingrese el teléfono del propietario: ")
-            mail = input("Ingrese el correo electrónico del propietario: ")
-            insert_propietario(nombre, apellido, direccion, telefono, mail)
+            producto = input("Ingrese el producto del propietario: ")
+            marca = input("Ingrese el marca del propietario: ")
+            modelo = input("Ingrese la modelo del propietario: ")
+            codigo = input("Ingrese el codigo del propietario: ")
+            insert_propietario(producto, marca, modelo, codigo)
             print("Propietario insertado exitosamente.\n")
         
         elif opcion == "2":
@@ -130,12 +128,11 @@ def ejecutar_menu():
         
         elif opcion == "3":
             prop_id = input("Ingrese el ID del propietario que desea actualizar: ")
-            nombre = input("Ingrese el nuevo nombre del propietario: ")
-            apellido = input("Ingrese el nuevo apellido del propietario: ")
-            direccion = input("Ingrese la nueva dirección del propietario: ")
-            telefono = input("Ingrese el nuevo teléfono del propietario: ")
-            mail = input("Ingrese el nuevo correo electrónico del propietario: ")
-            update_propietario(prop_id, nombre, apellido, direccion, telefono, mail)
+            producto = input("Ingrese el producto del propietario: ")
+            marca = input("Ingrese el marca del propietario: ")
+            modelo = input("Ingrese la modelo del propietario: ")
+            codigo = input("Ingrese el codigo del propietario: ")
+            update_propietario(prop_id, producto, marca, modelo, codigo)
             print("Propietario actualizado exitosamente.\n")
         
         elif opcion == "4":
