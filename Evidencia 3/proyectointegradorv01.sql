@@ -1,1 +1,1 @@
-SELECT * FROM proyectointegradorv01.propietarios;
+SELECT * FROM proyectointegradorv01.compelectronico;

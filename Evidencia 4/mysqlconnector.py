@@ -8,17 +8,18 @@ connection = mysql.connector.connect (
 )
 
 # Creación de la tabla propietarios en la base de datos existente
-def create_table_propietarios():
+def create_table_compelectronico():
     cursor = connection.cursor()
 
     # Sentencia SQL para crear la tabla propietarios
     create_table_query = """
-    CREATE TABLE IF NOT EXISTS propietarios (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+    CREATE TABLE IF NOT EXISTS compelectronico (
+        ID INT AUTO_INCREMENT PRIMARY KEY,
         Producto VARCHAR(50),
         Marca VARCHAR(50),
         Modelo VARCHAR(100),
-        Codigo VARCHAR(20)
+        Precio VARCHAR(20),
+        Stock VARCHAR(20)
     )
     """
 
@@ -30,13 +31,13 @@ def create_table_propietarios():
 
     cursor.close()
 
-# Método de inserción de datos en la tabla propietarios
-def insert_propietario(producto, marca, modelo, codigo):
+# Método de inserción de datos en la tabla Componentes Electronicos
+def insert_compelectronico(producto, marca, modelo, precio, stock):
     cursor = connection.cursor()
 
-    # Sentencia SQL para insertar un nuevo propietario en la tabla propietarios
-    insert_query = "INSERT INTO propietarios (producto, marca, modelo, codigo) VALUES (%s, %s, %s, %s)"
-    values = (producto, marca, modelo, codigo)
+    # Sentencia SQL para insertar un nuevo propietario en la tabla Componentes Electronicos
+    insert_query = "INSERT INTO compelectronico (producto, marca, modelo, precio, stock) VALUES (%s, %s, %s, %s, %s)"
+    values = (producto, marca, modelo, precio, stock)
 
     # Ejecutar la sentencia SQL de inserción
     cursor.execute(insert_query, values)
@@ -46,33 +47,33 @@ def insert_propietario(producto, marca, modelo, codigo):
 
     cursor.close()
 
-# Método de selección de datos desde la tabla propietarios
-def select_propietarios():
+# Método de selección de datos desde la tabla Componentes Electronicos
+def select_compelectronico():
     cursor = connection.cursor()
 
-    # Sentencia SQL para seleccionar todos los propietarios de la tabla propietarios
-    select_query = "SELECT * FROM propietarios"
+    # Sentencia SQL para seleccionar todos los propietarios de la tabla Componentes Electronicos
+    select_query = "SELECT * FROM compelectronico"
 
     # Ejecutar la sentencia SQL de selección
     cursor.execute(select_query)
 
     # Obtener todos los registros seleccionados
-    propietarios = cursor.fetchall()
+    compelectronico = cursor.fetchall()
 
     # Imprimir los registros
-    for propietarios in propietarios:
-        print(propietarios)
+    for compelectronico in compelectronico:
+        print(compelectronico)
 
     cursor.close()
 
-# Llamar a la función para crear la tabla propietarios
-create_table_propietarios()
+# Llamar a la función para crear la tabla Componentes Electronicos
+create_table_compelectronico()
 
 # Llamar al método de inserción de datos
-insert_propietario("ESP32", "Espressif", "Wroom", "ESP32")
+insert_compelectronico("Ethernet", "ETH1000", "TP-Link", "7030", "1000")
 
 # Llamar al método de selección de datos
-select_propietarios()
+select_compelectronico()
 
 # Cerrar la conexión a la base de datos
 connection.close()
