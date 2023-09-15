@@ -10,8 +10,7 @@ db_config = {
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor()
 
-# Simula la lectura de datos
-datos_manuales = [           
+datos_manuales = [           # Simula la lectura de datos
     (25.5, 45.2),
     (26.0, 44.8),
     (24.8, 46.5),
