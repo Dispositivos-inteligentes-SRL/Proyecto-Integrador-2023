@@ -1,0 +1,10 @@
+CREATE DATABASE datos_sensor;
+
+USE datos_sensor;
+
+CREATE TABLE lectura_sensor (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    temperatura DECIMAL(5, 2),
+    humedad DECIMAL(5, 2),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
