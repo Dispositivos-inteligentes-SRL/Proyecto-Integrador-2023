@@ -16,3 +16,9 @@ sensor y prepararlos para su envío. Para esto, debe considerar la
 capacidad de comunicación del microcontrolador.
 Seleccionar un Actuador y realizar la programación del comportamiento
 del mismo.
+
+![esquema](/Proyecto%20Integrador%202%20-%20Programacion/Entregas/Entrega%204/diagrama.png)
+
+
+### Enlace al simulador  
+**[Wokwi](https://wokwi.com/projects/378165306553327617)**
