@@ -1,0 +1,138 @@
+{
+  "version": 1,
+  "author": "Ulises Ale",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 33.5, "left": 129.4, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": 38.7, "left": -91.8, "attrs": {} },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": -76.6, "left": 105.6, "attrs": {} },
+    {
+      "type": "wokwi-slide-potentiometer",
+      "id": "pot2",
+      "top": 341,
+      "left": 104.6,
+      "attrs": { "travelLength": "30" }
+    },
+    {
+      "type": "wokwi-led-bar-graph",
+      "id": "bargraph1",
+      "top": 62.4,
+      "left": 580.8,
+      "attrs": { "color": "lime" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 80.75,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 147.95,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 61.55,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 138.35,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 71.15,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 128.75,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r7",
+      "top": 119.15,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r8",
+      "top": 109.55,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r9",
+      "top": 99.95,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r10",
+      "top": 90.35,
+      "left": 278.4,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "dht1:VCC", "esp:VIN", "red", [ "v0" ] ],
+    [ "dht1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "dht1:SDA", "esp:D14", "green", [ "v0" ] ],
+    [ "esp:D12", "relay1:IN", "gold", [ "h-67.2", "v-192.7" ] ],
+    [ "relay1:VCC", "esp:VIN", "red", [ "h-76.8", "v249.6" ] ],
+    [ "relay1:GND", "esp:GND.2", "black", [ "h-57.6", "v230" ] ],
+    [ "pot2:VCC", "esp:3V3", "red", [ "h-19.2", "v-134.4", "h153.6", "v-57.6" ] ],
+    [ "pot2:GND", "esp:GND.1", "black", [ "v0" ] ],
+    [ "esp:D34", "pot2:SIG", "blue", [ "h-76.8", "v316.6" ] ],
+    [ "bargraph1:C1", "esp:GND.1", "black", [ "v0", "h29.02", "v144" ] ],
+    [ "bargraph1:C2", "esp:GND.1", "black", [ "h29.02", "v105.6", "h-412.5" ] ],
+    [ "bargraph1:C3", "esp:GND.1", "black", [ "h29.02", "v124.8" ] ],
+    [ "bargraph1:C4", "esp:GND.1", "black", [ "h29.02", "v124.8" ] ],
+    [ "bargraph1:C5", "esp:GND.1", "black", [ "h29.02", "v76.79", "h-412.5" ] ],
+    [ "bargraph1:C6", "esp:GND.1", "black", [ "h29.02", "v105.59" ] ],
+    [ "bargraph1:C7", "esp:GND.1", "black", [ "h29.02", "v95.99" ] ],
+    [ "bargraph1:C8", "esp:GND.1", "black", [ "h29.02", "v76.79" ] ],
+    [ "bargraph1:C9", "esp:GND.1", "black", [ "h29.02", "v86.39" ] ],
+    [ "bargraph1:C10", "esp:GND.1", "black", [ "h29.02", "v28.79", "h-412.5" ] ],
+    [ "esp:D15", "r2:1", "green", [ "h28.5", "v-9.8" ] ],
+    [ "r2:2", "bargraph1:A10", "green", [ "h162", "v0", "h86.4" ] ],
+    [ "esp:D2", "r4:1", "green", [ "h18.9", "v-19.9" ] ],
+    [ "esp:D4", "r6:1", "green", [ "h18.9", "v-9.5" ] ],
+    [ "esp:D5", "r7:1", "green", [ "h0" ] ],
+    [ "esp:D18", "r8:1", "green", [ "h0" ] ],
+    [ "esp:D19", "r9:1", "green", [ "h0" ] ],
+    [ "esp:D21", "r10:1", "green", [ "h0" ] ],
+    [ "r3:2", "bargraph1:A1", "green", [ "v0" ] ],
+    [ "r5:2", "bargraph1:A2", "green", [ "h8.4", "v-28.8", "h240" ] ],
+    [ "r1:2", "bargraph1:A3", "green", [ "v0", "h18", "v-38.4" ] ],
+    [ "r10:2", "bargraph1:A4", "green", [ "v0", "h27.6", "v-38.4" ] ],
+    [ "r9:2", "bargraph1:A5", "green", [ "v0", "h37.2", "v-38.4" ] ],
+    [ "r8:2", "bargraph1:A6", "green", [ "v0", "h46.8", "v-28.8" ] ],
+    [ "r7:2", "bargraph1:A7", "green", [ "v0", "h56.4", "v-28.8" ] ],
+    [ "r6:2", "bargraph1:A8", "green", [ "v0", "h66", "v-28.8" ] ],
+    [ "r4:2", "bargraph1:A9", "green", [ "v0", "h75.6", "v-19.2" ] ],
+    [ "esp:D22", "r1:1", "green", [ "h18.9", "v18.9" ] ],
+    [ "esp:D23", "r5:1", "green", [ "h28.5", "v19.3" ] ],
+    [ "r3:1", "esp:D13", "green", [ "v-19.2", "h0", "v-19.2", "h-172.8", "v144" ] ]
+  ],
+  "dependencies": {}
+}
